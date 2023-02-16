@@ -1,0 +1,13 @@
+{
+  "name": "tensorflow-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hohowin/tensorflow-js.git",
+  "author": "Howin Ho <ho1ho@yahoo.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "browser",
+    "server"
+  ]
+}
