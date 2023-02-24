@@ -40,18 +40,7 @@ interface DataType extends TensorContainerObject {
     ys: tf.Tensor;
 }
 
-const plot = (pointsArray, featureName ) => {
-    tfvis.render.scatterplot(
-        {name: `${featureName} vs House Price`},
-        {values: [pointArray], series: ["original"]},
-        {
-            xLabel: featureName,
-            yLabel: "Price",
-        }
-    );
-};
-
-const run = async () => {
+(async () => {
     const houseSalesDataSet = tf.data.csv("http://localhost:8080/kc_house_data.csv", {
         columnConfigs: {
             bedrooms: { dtype: 'float32' },
@@ -81,8 +70,6 @@ const run = async () => {
         y: record.price,
     }));
 
-    plot(await points.toArray(), "Square Feet");
-};
-
-run();
+    console.log(await points.toArray())
+})();
 ```
